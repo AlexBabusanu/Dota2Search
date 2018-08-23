@@ -1,0 +1,24 @@
+<div class="content">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="details.length === 0">
+    <div class="query">
+      <label>Search Item</label>
+      <input name="steamId" placeholder="Item Name" ngModel required>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <div class="userDetails" *ngIf="details.length > 0">
+    <img [src]="details[1]"><h1>{{details[0]}}</h1>
+
+    <a [routerLink]="['/inventory', details[2] ]">Your Inventory</a>
+  </div>
+
+  <div class="friendsList">
+    <h2 *ngIf="friendsList.length > 0">See a friends inventory</h2>
+    <ul>
+      <li *ngFor="let friend of friendsList" [class.inGame]="friend?.game" [class.online]="friend.onlineStatus > 0">
+        <a [routerLink]="['/inventory', friend.steamId ]"><img [src]="friend.avatar">{{ friend.username }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

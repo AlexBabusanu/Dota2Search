@@ -1,0 +1,17 @@
+<div class="detail">
+  <img [src]="item.image_inventory"
+   [ngClass]="{ 'common': !item.item_rarity, 'uncommon': item.item_rarity === 'uncommon', 'rare': item.item_rarity === 'rare',
+  'mythic': item.item_rarity === 'mythical', 'legendary': item.item_rarity === 'legendary', 'immortal': item.item_rarity ===
+  'immortal', 'arcana': item.item_rarity === 'arcana', 'ancient': item.item_rarity === 'ancient' }">
+<ul>
+  <li>
+    <h4>Item Name: {{item.name}}</h4>
+  </li>
+  <li>
+    <h5>Item Rarity: <span class="capitalize">{{ item.item_rarity }}</span></h5>
+  </li>
+  <li>
+    <h5>Item Slot: {{ item.item_slot}}</h5>
+  </li>
+</ul>
+</div>

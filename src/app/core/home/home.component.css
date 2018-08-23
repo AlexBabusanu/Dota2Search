@@ -1,0 +1,25 @@
+ul {
+    list-style:none;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+li {
+    display:flex;
+    align-items: center;
+}
+.content {
+    margin-top:50px
+}
+
+.online {
+    color:blue
+}
+.inGame {
+    color:green;
+}
+
+.userDetails {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
